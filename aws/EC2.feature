@@ -1,12 +1,12 @@
 Feature: EC2 related general feature
 
-
 	Scenario: Ensure sg on EC2 instance
 		Given I have aws_instance defined
+			Then it must have security_groups defined
 		Given I have AWS Security Group defined
-		When it has ingress
-    	Then it must have ingress
-    	Then it must not have any protocol and port 22 for 0.0.0.0/0
+			When it has ingress
+    			Then it must have ingress
+    			Then it must not have any protocol and port 22 for 0.0.0.0/0
 
 	Scenario: Ensure all data stored in the Launch configuration EBS is securely encrypted
 		Given I have aws_instance defined
