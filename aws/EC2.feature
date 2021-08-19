@@ -3,10 +3,7 @@ Feature: EC2 related general feature
 
 	Scenario: Ensure encryption on EC2 instance volumes
 		Given I have aws_instance defined
-		When it has root_block_device
-		Then it must have root_block_device
-		Then it must have encrypted
-		And its value must be True
+		Then I must have aws_security_group defined
 
 	Scenario: Ensure all data stored in the Launch configuration EBS is securely encrypted
 		Given I have aws_instance defined
