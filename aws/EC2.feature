@@ -2,7 +2,7 @@ Feature: EC2 related general feature
 
 	Scenario: Ensure sg on EC2 instance
 		Given I have aws_instance defined
-			Then it must have security_groups defined
+			Then it must contain vpc_security_group_ids
 		Given I have AWS Security Group defined
 			When it has ingress
     			Then it must have ingress
