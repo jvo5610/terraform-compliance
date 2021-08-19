@@ -1,9 +1,10 @@
 Feature: EC2 related general feature
 
 
-	Scenario: Ensure encryption on EC2 instance volumes
+	Scenario: Ensure sg on EC2 instance
 		Given I have aws_instance defined
-		Then I must have aws_security_group defined
+		Given I have aws_security_group defined
+		Then it must not have any protocol and port 22 for 0.0.0.0/0
 
 	Scenario: Ensure all data stored in the Launch configuration EBS is securely encrypted
 		Given I have aws_instance defined
